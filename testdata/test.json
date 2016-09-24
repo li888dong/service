@@ -1,0 +1,10 @@
+{"account":{"commissionRate":".00108","CRMScale":"2","SubcontractManager":"李晓雷"},"property":{
+  "totalAssets":"299444.32", "debtAssets":"298121.32",
+  "idleAssets":"100.32", "netAssets":"248537.95"},
+  "goldAssets":[{ "productName":"方正富邦金小宝货币",
+    "productTypeName":"金小宝", "productClassifyName":"风险1",
+    "productTime":"20160510" },{"productName":"民族证券现金港集合计划", "productTypeName":"其他产品",
+    "productClassifyName":"风险1", "productTime":"20160912"}],"serviceAsserts":{ "serviceName":"APP组合","collectionManner":"收费方式2", "name":"吴志林",
+    "startTime":"2015-04-10 17:15:40", "endTime":"2114-04-10 17:15:40"
+  }}
+

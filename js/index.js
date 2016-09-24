@@ -5,8 +5,8 @@ $(function(){
     var _response;
     window.onload=function(){
         loadUndoUserData(_response);
-        if ($('.issueNumber').html==""){
-            $(this).hide()
+        if ($('.issueNumber').html()==""){
+            $('.issueNumber').hide()
         }
     };
 
@@ -16,7 +16,7 @@ $(function(){
         $('.totalList').empty().show();
         $('.undoPageContainer').hide();
         $('.totalPageContainer').show();
-        loadDefaultUserData();
+        loadTotalTask();
     });
     $('.undo').on('click',function(){
         $('.undoList').empty().show();
@@ -39,7 +39,7 @@ $(function(){
     //对话任务列表选定样式切换
     $('.totalList,.undoList').on('click','.list_Item',function(){
         $(this).addClass('Item_selected').siblings().removeClass('Item_selected');
-        $('.chatIframe').css({"visibility":"visible"})
+        $('.chatIframe').attr('src','chatBox/chatBox.html?sessionId=10003')
     });
     //高级搜索显示与隐藏
     $('.searchSettingOpen').click(function(e){
@@ -52,19 +52,23 @@ $(function(){
     $(".searchSetting").on("click", function(e){
         e.stopPropagation();
     });
-    //待处理分页按钮功能样式
-    $('.undoPage li').on('click',function(){
-        var index =$(this).index();
-
-        loadPageUndoUserData(index);
+    //待处理分页
+    $(".undoPageCode").createPage({
+        pageCount:100,
+        current:1,
+        backFn:function(p){
+           loadPageUndoUserData(p)
+        }
     });
-    //
-    //全部分页按钮功能样式
-    $('.totalPage li').on('click',function(){
-        var index =$(this).index();
-
-        loadPageTotalUserData(index);
+    //全部任务分页
+    $(".totalPageCode").createPage({
+        pageCount:100,
+        current:1,
+        backFn:function(p){
+            loadTotalTask(p)
+        }
     });
+
     //搜索功能样式
     $('.searchBegin').click(function(){
         if ($('.listSearch').val()!=""){
@@ -89,7 +93,7 @@ $(function(){
         e.stopPropagation()
     });
     // 填充全部任务列表动态数据
-    var rendFormDataTotal = function (_response) {
+     function  rendFormDataTotal(_response) {
         for(var i=0;i<_response.length;i++){
                 var _sessionId= _response[i].sessionId,
                     _phone= _response[i].phone,
@@ -117,15 +121,16 @@ $(function(){
                 '<buttton class="qiangdan">抢单</buttton> </div>' +
                 '</li>'
             );
+
             if (qiangdan=="待领取"){
-                $('._status').css({"color":"blue"})
+                $('._status').css({"color":"blue"});
                 $('.qiangdan').show()
             }
 
         }
     };
     //填充待处理任务列表动态数据
-    var rendFormDataUndo = function (_response,newTask) {
+     function rendFormDataUndo(_response,newTask) {
         $('.undoList').prepend(newTask);
         for (var i = 0; i < _response.length; i++) {
             var _sessionId = _response[i].sessionId,
@@ -156,34 +161,13 @@ $(function(){
         $('.issueNumber').html($('.undoList').find('.list_Item').length)
 
     };
-    // 加载全部任务信息
-    var loadDefaultUserData = function () {
-        $('.totalList').empty();
-       // 正式URL
-       var _url='http://localhost:8080/ifc-kefu-mock-webapp/allUser/index';
-        // 测试URL
-       // var _url = './testdata/tsconfig.json';
-            $.ajax({
-                url: _url,
-                type: "GET",
-                dataType: "JSON",
-                success: function (d) {
-                    _response= d;
-                    // 开始填充页面元素
-                    rendFormDataTotal(_response);
-                },
-                error: function () {
-                    // console.log("error");
-                    alert("网络错误，请刷新重试！");
-                }
-            });
-        };
+
     //加载待处理列表
-    var loadUndoUserData =function(){
+    function loadUndoUserData(){
         $('.undoList').empty();
-        var _url="http://localhost:8080/ifc-kefu-mock-webapp/allUser/kfIndex?kfNumber=95571";
+        //var _url="http://localhost:8080/ifc-kefu-mock-webapp/allUser/kfIndex?kfNumber=95571";
         // 测试URL
-        //var _url = './testdata/tsconfig.json';
+        var _url = './testdata/tsconfig.json';
         $.ajax({
             url: _url,
             type: "GET",
@@ -200,10 +184,11 @@ $(function(){
         });
     };
     //加载待处理任务分页
-    var loadPageUndoUserData =function (index){
-        $('.undoPage li').eq(index).addClass('pageSelected').siblings().removeClass('pageSelected');
+    function loadPageUndoUserData(index){
         $('.undoList').empty();
-        var _url='localhost:8080/ifc-kefu-mock-webapp/allUser/kfIndex?pageIndex='+index;
+        //var _url='localhost:8080/ifc-kefu-mock-webapp/allUser/kfIndex?pageIndex='+index;
+        var _url='./testdata/tsconfig.json';
+
         $.ajax({
             url: _url,
             type: "GET",
@@ -220,11 +205,11 @@ $(function(){
         });
 
     };
-    //加载全部任务分页
-    var loadPageTotalUserData =function(index){
-        $('.totalPage li').eq(index).addClass('pageSelected').siblings().removeClass('pageSelected');
+    //加载全部任务、分页及条件查询
+    function loadTotalTask(index){
         $('.totalList').empty();
-        var _url='localhost:8080/ifc-kefu-mock-webapp/allUser/index?pageIndex='+index;
+        //var _url='localhost:8080/ifc-kefu-mock-webapp/allUser/index'+index;
+        var _url='./testdata/tsconfig.json';
         $.ajax({
             url: _url,
             type: "GET",
@@ -241,7 +226,7 @@ $(function(){
         });
     };
     //改变抢单状态
-    var loadqiangdan=function(qd){
+    function loadqiangdan(qd){
         // 正式URL
         var _url='localhost:8080/ifc-kefu-mock-webapp/allUser/changeStatus?sessionId='+qd[0]+'&kfNumber='+qd[1];
         alert(_url)
@@ -283,7 +268,7 @@ $(function(){
     //        }
     //    });
     //};
-    var getStatus=function(_status){
+    function getStatus(_status){
         var qiangdan;
         if(_status==0){
             qiangdan="待领取";

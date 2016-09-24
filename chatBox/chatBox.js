@@ -3,16 +3,15 @@
  */
 $(function(){
     var data;
-    window.onload=function(){
-        getAssetInfo();
-    };
 
+    var sessionId=getUrlParam('sessionId');
+    getAssetInfo();
+    chatStart(sessionId);
     $('.chatOver').click(function(){
         chatOver();
     });
     //填写页面资产信息
     var rendAssetInfo = function (data) {
-
         var _account=data.account,
             _commissionRate=_account.commissionRate,
             _CRMScale=_account.CRMScale,
@@ -49,6 +48,27 @@ $(function(){
                 ' <div>【服产】 '+_serviceName+'</div>'
             );
     };
+    //开始会话
+    function chatStart (arg){
+        // 正式URL
+        //var _url='http://localhost:8080/ifc-kefu-mock-webapp/allUser/getMessage?sessionId='+arg;
+        // 测试URL
+        var _url = '../testdata/package.json';
+        $.ajax({
+            url: _url,
+            type: "GET",
+            dataType: "JSON",
+            success: function (d) {
+                data= d;
+                // 开始填充页面元素
+                alert(data[0].content)
+            },
+            error: function () {
+                // console.log("error");
+                alert("网络错误，请刷新重试！");
+            }
+        });
+    }
     //结束会话
     function chatOver (){
         // 正式URL
@@ -75,7 +95,7 @@ $(function(){
         // 正式URL
         //var _url='http://10.150.33.168:8080/ifc-kefu-mock-webapp/allUser/getJson';
         // 测试URL
-        var _url = '../testdata/tsconfig.json';
+        var _url = '../testdata/test.json';
         $.ajax({
             url: _url,
             type: "GET",
@@ -90,5 +110,12 @@ $(function(){
                 alert("网络错误，请刷新重试！");
             }
         });
+    }
+    // 获取url相关参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
     }
 });

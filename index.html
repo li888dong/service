@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/pagination.css">
     <script src="lib/jquery.min.js"></script>
 </head>
 <body>
@@ -124,38 +125,23 @@
             <ul class="undoList">
             </ul>
             <div>
-                <div class="undoPageContainer">
-                    <!--底部分页-->
-                    <ul class="undoPage">
-                        <li><</li>
-                        <li class="pageSelected">1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>></li>
-                    </ul>
-                </div>
                 <!--底部分页-->
+                <div class="undoPageContainer">
+                    <div class="undoPageCode pageContainer"></div>
+                </div>
                 <div class="totalPageContainer">
-                    <ul class="totalPage">
-                        <li><</li>
-                        <li class="pageSelected">1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>></li>
-                    </ul>
+                    <div class="totalPageCode pageContainer"></div>
                 </div>
             </div>
 
         </div>
         <!--右边对话框-->
-        <iframe src="chatBox/chatBox.html" frameborder="0" class="chatIframe"></iframe>
+        <iframe src="javascript::" frameborder="0" class="chatIframe"></iframe>
 
     </div>
 <script src="js/index.js"></script>
+<script src="lib/jquery.page.js"></script>
+
 
 </body>
 </html>
