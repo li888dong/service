@@ -1,0 +1,456 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+fieldset,img{border:0}
+table{border-collapse:collapse;border-spacing:0}
+li{list-style:none}
+a,a:hover{text-decoration:none;}
+body{font-family:"PingFang SC",Arial;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 设置默认字体 */
+body, button, input, select, textarea { /* for ie */
+    font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+
+h1 {
+    font-size: 18px; /* 18px / 12px = 1.5 */
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4, h5, h6 {
+    font-size: 100%;
+}
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+/* 将斜体扶正 */
+code, kbd, pre, samp, tt {
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* 统一等宽字体 */
+small {
+    font-size: 12px;
+}
+
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol {
+    list-style: none;
+}
+
+/* 重置文本格式元素 */
+a {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input, button, select, textarea {
+    outline: none;
+    box-shadow: 0;
+}
+
+textarea {
+    resize: none
+}
+
+fieldset, img {
+    border: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+/* 重置表单元素 */
+legend {
+    color: #000;
+}
+
+/* for ie6 */
+fieldset, img {
+    border: none;
+}
+
+/* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html {
+    overflow-y: scroll;
+}
+
+html {
+    min-height: 100%;
+    _height: 100%;
+}
+
+body {
+    background-color: #fff;
+    overflow-x: hidden;
+    font-family: "PingFang SC", "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+h1 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+
+/*头部导航栏*/
+.main_header{
+    padding-left: 3px;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid rgb(17, 70, 123);
+    background-color: #083F5D;
+}
+    .fl{
+        float: left;
+    }
+    .fr{
+        float: right;
+    }
+    .fl li{
+        float: left;
+        margin: 10px 0 0 5px;
+        list-style: none;
+    }
+    .fl li:hover{
+        opacity: .7;
+    }
+    .red-btn{
+        background: #E4433B;
+        width: 80px;
+        height:30px;
+        border-radius: 5px;
+        border: none;
+        font-weight: bolder;
+        color: #B80000;
+        padding-right:18px;
+    }
+    .caret {
+        position: relative;
+        left:60px;
+        top:-10px;
+    }
+
+    .caret:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: 4px solid #fbf5f5;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+    }
+    .caret:after {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 0;
+        border-top: -4px solid #eeeeee;
+        border-left: -4px solid transparent;
+        border-right: -4px solid transparent;
+    }
+    .main_logo img{
+        width: 40px;
+    }
+    .main_logo{
+        position: absolute;
+        left:50%;
+        padding-top: 8px;
+    }
+    .fr li{
+        float: right;
+        list-style: none;
+        color: white;
+        margin:15px 10px 0 0;
+    }
+    .clear_fix{
+        clear:both;
+    }
+    /*主内容*/
+.main_container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:flex-start;
+    height:100%;
+}
+/*左侧导航栏*/
+    .left_col{
+        width: 65px;
+        height:100%;
+        background-color: rgb(36,41,48);
+        z-index: 10;
+    }
+        .menu li{
+            width:65px;
+            height:52px;
+            list-style: none;
+            background:url("../img/home.png")no-repeat center;
+            cursor: pointer;
+        }
+        .li_selected{
+            background:url("../img/home.png")no-repeat center #3194C0 !important;
+        }
+        .menu li:hover{
+            background:url("../img/home_light.png")no-repeat center;
+        }
+/*对话任务列表*/
+.taskList{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:flex-start;
+    width: 350px;
+    float: left;
+    border-right:1px solid #efefef;
+}
+    .btn_group{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        background-color: #F9F9F9;
+        height: 30px;
+        padding:5px 8px 10px 8px;
+    }
+        .undo{
+            width: 50%;
+            height:24px;
+            border: 1px solid #efefef;
+            border-radius: 3px;
+            background-color: #eeeeee;
+        }
+            .issueNumber{
+                border-radius: 100%;
+                background: #FA6261;
+                font-size: 12px;
+                padding: 1px 4px;
+                color: white;
+            }
+        .undo:hover{
+            cursor: pointer;
+        }
+        .total{
+            width: 50%;
+            height:24px;
+            border: 1px solid #efefef;
+            border-radius: 3px;
+            background-color: #eeeeee;
+        }
+        .total:hover{
+            cursor: pointer;
+        }
+        .btn_selected{
+            background-color: #3A87AD;
+            color: white;
+        }
+        .listSearch{
+            margin: 10px;
+            padding: 10px;
+            width: 310px;
+            border-radius: 3px;
+            border: 1px solid #eeeeee;
+        }
+        .searchSettingOpen{
+            position: absolute;
+            height:30px;
+            z-index: 1000;
+            left: 300px;
+            top:120px;
+            cursor: pointer;
+        }
+        .searchBegin{
+            position: absolute;
+            width: 30px;
+            height:30px;
+            z-index: 1001;
+            left: 350px;
+            top:110px;
+            cursor: pointer;
+            background:url("../img/search.png")no-repeat center;
+        }
+        .searchSetting {
+            position: absolute;
+            width: 710px;
+            height: 180px;
+            background: white;
+            border: 1px solid #efefef;
+            display: flex;
+            visibility: hidden;
+            flex-flow: column nowrap;
+            justify-content:space-around;
+        }
+
+        .formContainer{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content:space-around;
+        }
+        .searchSetting input{
+            padding:5px;
+            border:1px solid #efefef;
+            border-radius: 5px;
+        }
+        .totalList{
+            display: none;
+        }
+        .undoList{
+            display: block;
+        }
+    .list_Item{
+        width: 100%;
+        height:80px;
+        border-top: 1px solid #efefef;
+        border-left: 5px #ffffff solid;
+        padding:5px 5px 0 30px;
+        line-height: 16px;
+        cursor:pointer;
+    }
+    .list_Item:hover{
+        background-color: #E9E9A1;
+        border-left: 5px #E9E9A1 solid;
+    }
+    .editList{
+        display: none;
+    }
+    .Item_selected{
+        background-color: #E9E9A1;
+        border-left: 5px #3A87AD solid!important;
+    }
+        .qiangdan{
+            padding:3px 10px 3px 10px;
+            border: 1px solid #efefef;
+            border-radius: 5px;
+            background-color: #46ACCA;
+            color: white;
+            display: none;
+            cursor: pointer;
+        }
+        .status{
+            padding: 3px;
+            border-radius: 5px;
+            background-color: #898989;
+            color: white;
+        }
+.totalPageContainer{
+    width:315px;
+    position: absolute;
+    bottom: 5%;
+    left: 70px;
+    padding: 10px;
+    z-index: 100;
+    display: none;
+}
+
+.undoPageContainer{
+    width:315px;
+    position: absolute;
+    bottom: 5%;
+    left: 70px;
+    padding: 10px;
+    z-index: 100;
+}
+
+    .undoPage{
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: space-around;
+    }
+
+    .totalPage {
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: space-around;
+    }
+    .totalPage li,.undoPage li{
+        width: 30px;
+        height:30px;
+        line-height: 30px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+    .pageSelected{
+        background: #3A87AD!important;
+    }
+
+    .chatIframe{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        width: 845px;
+        height:700px;
+
+    }

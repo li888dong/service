@@ -1,0 +1,122 @@
+/*对话框*/
+.chatboxContainer{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    width: 845px;
+    float: right;
+
+}
+/*访客信息*/
+.assetInfo{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:space-around;
+    border:1px solid #eeeeee;
+    flex-grow: 1;
+    background-color: #F9F9F9;
+    padding: 5px;
+}
+.chatContain{
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 3;
+}
+/*聊天窗*/
+.chatbox{
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 3;
+    height: 450px;
+    padding:20px;
+}
+.chatboxHeader{
+    display: flex;
+    flex-flow: row;
+    justify-content:space-between;
+    padding:5px;
+}
+.chatLogo{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 40px;
+}
+.throughConnect{
+    width: 57px;
+    height:24px;
+    background: #F9F9F9;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.chatOver{
+    width: 70px;
+    height:24px;
+    background-color: #FAAA3A;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.chatboxBody{
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 8;
+}
+.chatboxSend{
+    display: flex;
+    flex-flow: column;
+    justify-content:space-between;
+    border:1px solid #38B5ED;
+    flex-grow: 1;
+
+}
+.inputbtn{
+    display: flex;
+    flex-flow: row;
+    justify-content:space-between;
+    flex-grow: 1;
+    padding: 5px;
+}
+textarea{
+    flex-grow: 3;
+    resize: none;
+    border: none;
+    outline: none;
+    width: 80%;
+}
+.chatboxReceived{
+    display: flex;
+    flex-flow: column;
+    justify-content:flex-start;
+    border:1px solid #38B5ED;
+    flex-grow: 3;
+    padding: 5px;
+}
+.chatboxReceived p{
+    margin-top: 20px;
+    line-height:100%;}
+.chatHistory{
+    background-color: #C6EDFC;
+    padding: 5px;
+    border-radius: 5px;
+    border: #efefef;
+}
+/*右侧备注和快捷回复*/
+.info{
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1.5;
+    padding:20px;
+    margin-top: 40px;
+}
+.info h3{
+    border-bottom: 2px solid #efefef;
+}
+.comment{
+    flex-grow:1;
+}
+.fastReply{
+    flex-grow: 2;
+}

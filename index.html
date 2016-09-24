@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery.min.js"></script>
+</head>
+<body>
+<!--头部-->
+<header class="main_header">
+    <div class="main_logo">
+        <img src="img/main_logo.png" alt="">
+    </div>
+    <ul class="fl">
+        <li>
+            <button class="drop-down red-btn">失效<div class="caret"></div></button>
+        </li>
+        <li>
+            <img src="img/phone.png" alt="图片加载失败">
+        </li>
+    </ul>
+
+    <ul class="fr">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+
+        <li>444</li>
+        <li>555</li>
+        <li>666</li>
+    </ul>
+</header>
+<!--主要内容-->
+    <div class="clear_fix"></div>
+    <div class="main_container">
+        <!--左边导航栏-->
+        <nav class="left_col">
+            <ul class="menu">
+                <li></li>
+                <li></li>
+                <li class="li_selected"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+        <!--对话任务列表-->
+        <div class="taskList">
+            <div class="btn_group">
+                <button class="undo btn_selected" >待处理<span class="issueNumber"></span></button>
+                <button class="total">全部</button>
+            </div>
+            <div>
+                <input type="search" class="listSearch" placeholder="输入用户名查询">
+                <div class="searchSettingOpen">高级搜索</div>
+                <div class="searchBegin"></div>
+                <form action="">
+                <div class="searchSetting">
+                        <div class="formContainer">
+                        手机号: <input type="tel" name="tel">
+                        状态:
+                        <select name="status">
+                            <option value=""></option>
+                            <option value="">待领取</option>
+                            <option value="">已领取</option>
+                            <option value="">已关闭</option>
+                            <option value="">已流转</option>
+                        </select>
+                        当前处理人: <input type="search">
+                                    <select>
+                                        <option value="">111</option>
+                                        <option value="">111</option>
+                                        <option value="">111</option>
+                                        <option value="">111</option>
+                                        <option value="">111</option>
+                                    </select>
+                        </div>
+                        <div class="formContainer">
+                        会话时间: <input type="datetime">-<input type="datetime">
+                        处理结果: 
+                                    <select>
+                                        <option value="">请选择</option>
+                                        <option value="">证券分析</option>
+                                        <option value="">业务咨询</option>
+                                        <option value="">软件咨询</option>
+                                        <option value="">理财产品</option>
+                                        <option value="">需求投诉</option>
+                                        <option value="">其他</option>
+                                    </select>
+                        </div>
+                        <div class="formContainer">
+                            消息数: <input type="radio" name="msgNum">大于
+                                     <input type="radio" name="msgNum">小于
+                                     <input type="radio" name="msgNum">等于
+                                     <input type="number">
+                            技能组:
+                                    <select>
+                                        <option value="">请选择</option>
+                                        <option value="">客服</option>
+                                        <option value="">客服</option>
+                                        <option value="">客服</option>
+                                        <option value="">客服</option>
+                                        <option value="">客服</option>
+                                    </select>
+                        </div>
+                        <div class="fr">
+                            <input type="reset" value="重置">
+                            <input type="submit" value="搜索">
+                        </div>
+                </div>
+                </form>
+            </div>
+            <!--生成的所有对话任务列表-->
+            <ul class="totalList">
+            </ul>
+
+            <!--生成的待处理任务列表-->
+            <ul class="undoList">
+            </ul>
+            <div>
+                <div class="undoPageContainer">
+                    <!--底部分页-->
+                    <ul class="undoPage">
+                        <li><</li>
+                        <li class="pageSelected">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>></li>
+                    </ul>
+                </div>
+                <!--底部分页-->
+                <div class="totalPageContainer">
+                    <ul class="totalPage">
+                        <li><</li>
+                        <li class="pageSelected">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!--右边对话框-->
+        <iframe src="chatBox/chatBox.html" frameborder="0" class="chatIframe"></iframe>
+
+    </div>
+<script src="js/index.js"></script>
+
+</body>
+</html>
